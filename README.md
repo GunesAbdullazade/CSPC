@@ -1,3 +1,6 @@
+## PW2 --- Lab A
+
+The mean acceleration measured from the noisy position data was -8.58 m/s². The acceleration was very noisy because differentiation amplifies measurement noise, especially when taking the derivative twice. After integrating the noisy acceleration back to velocity and then position, the recovered position was close to the original position. The largest difference was 0.785 m, which is within the expected ~1 m range.
 # CSPS PW1 LAB A work
 
 ## PW1 --- Lab A
