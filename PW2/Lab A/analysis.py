@@ -37,4 +37,30 @@ axes[2].legend()
 
 plt.tight_layout()
 plt.savefig("motion.png")
-plt.show()
+# Bonus: 2D trajectory
+
+trajectory = np.loadtxt("trajectory.csv", delimiter="\t", skiprows=1)
+
+t2 = trajectory[:, 0]
+x = trajectory[:, 1]
+y2 = trajectory[:, 2]
+
+vx = np.gradient(x, t2)
+vy = np.gradient(y2, t2)
+
+speed = np.sqrt(vx**2 + vy**2)
+
+plt.figure()
+plt.plot(x, y2)
+plt.xlabel("x (m)")
+plt.ylabel("y (m)")
+plt.title("2D Trajectory")
+plt.savefig("trajectory.png")
+
+plt.figure()
+plt.plot(t2, speed)
+plt.xlabel("Time (s)")
+plt.ylabel("Speed (m/s)")
+plt.title("Speed vs Time")
+plt.savefig("speed.png")
+print("BONUS WORKED")
